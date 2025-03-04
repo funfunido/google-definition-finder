@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Google Definition Finder</title>
+</head>
+<body>
+    <h1 class="boom">Google Definition Finder</h1>
+    <input type="text" placeholder="Search for word on Google" id="something"> <button onclick="lookup()">Look Up</button>
+    <style>
+        .boom {
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function lookup() {
+            const firstpartofurl = "https://www.google.com/search?q="
+            const secondpartofurl = "+definition"
+            let wordplaceholder = encodeURIComponent($("#something").val());
+            let finalvalue = (firstpartofurl + wordplaceholder + secondpartofurl);
+
+            window.open(finalvalue, '_blank').focus();
+
+
+        }
+
+    </script>
+</body>
+</html>
